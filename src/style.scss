@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Zilla+Slab");
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  height: 100vh;
+
+  background: linear-gradient(to bottom right, #ff0039, #ff9400);
+
+  font-family: "Zilla Slab", "Times New Roman", Times, serif;
+  font-size: 2.5vw;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
