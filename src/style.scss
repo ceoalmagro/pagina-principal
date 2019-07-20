@@ -31,6 +31,19 @@ header {
   font-family: $title-font;
   font-size: 2vw;
 
+  .down {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 10rem;
+
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      background: none;
+    }
+  }
+
   @media (max-aspect-ratio: 1/1) {
     font-size: 1em;
   }
