@@ -1,3 +1,9 @@
+mixin section(title)
+  section
+    h2= title
+    .content
+      block
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -14,5 +20,14 @@ html(lang="en")
     link(rel="stylesheet", href="style.scss")
     title CEO Almagro
   body
-    h1 Centro de Estudiantes de ORT Almagro
-    h2 Pagina en construccion
+    header
+      h1 Centro de Estudiantes de ORT Almagro
+    +section("Quiénes Somos")
+      p Somos los mayores gamers del universo
+    +section("Comisiones")
+      ul
+        li A
+        li B
+        li C
+        li D
+        li E
