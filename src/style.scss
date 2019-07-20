@@ -25,7 +25,9 @@ header {
   justify-content: center;
   height: 100vh;
 
-  background: linear-gradient(to top right, #c069ff, #ff0039);
+  background: url(./assets/logo.svg) center no-repeat,
+    linear-gradient(to top right, #c069ff, #ff0039);
+  background-size: contain;
 
   text-align: center;
   font-family: $title-font;
@@ -38,6 +40,13 @@ header {
 
     text-decoration: none;
     color: black;
+
+    @keyframes bounce {
+      to {
+        transform: translateY(-0.1em);
+      }
+    }
+    animation: bounce 1s infinite ease-out alternate;
 
     &:hover {
       background: none;
