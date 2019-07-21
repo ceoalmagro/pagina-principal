@@ -47,10 +47,6 @@ header {
       }
     }
     animation: bounce 1s infinite ease-out alternate;
-
-    &:hover {
-      background: none;
-    }
   }
 
   @media (max-aspect-ratio: 1/1) {
@@ -105,16 +101,29 @@ section {
   }
 }
 
-ul {
-  list-style-type: "⇒ ";
+#redes .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  a {
+    text-align: center;
+
+    img {
+      padding: 1em;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      filter: drop-shadow(0 0 10px rgba(black, 0.25));
+
+      transition: transform 0.25s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 }
 
-a {
-  color: #ff0039;
-  text-decoration: underline dashed;
-
-  transition: background 500ms cubic-bezier(0.07, 0.95, 0, 1);
-  &:hover {
-    background: rgba(#ff9400, 0.25);
-  }
+ul {
+  list-style-type: "⇒ ";
 }
