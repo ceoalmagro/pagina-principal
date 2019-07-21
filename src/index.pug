@@ -1,0 +1,50 @@
+mixin section(title, id)
+  section(id=id)
+    h2= title
+    .content
+      block
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+    meta(property="og:title", content="CEO Almagro")
+    meta(property="og:description", content="Pagina oficial del Centro de Estudiantes de ORT Almagro")
+    meta(property="og:url", content="https://ceoalmagro.github.io/")
+
+    link(rel="icon", href="assets/logo_16.png", sizes="16x16")
+    link(rel="icon", href="assets/logo_32.png", sizes="32x32")
+    link(rel="icon", href="assets/logo_48.png", sizes="48x48")
+    link(rel="stylesheet", href="style.scss")
+
+    title CEO Almagro
+  body
+    header
+      h1 Centro de Estudiantes <br> de ORT Almagro
+      a(href="#quienes-somos").down ⌄
+    +section("Quiénes Somos", "quienes-somos")
+      p El centro de estudiantes es una organización horizontal cuyo objetivo es hacer oír la voz del estudiantado. Esta formado por todxs lxs alumnxs del ciclo básico y de las orientaciones.
+      p El centro es una democracia directa: Cualquier decisión del centro se hace mediante una votación en asamblea, en la cual cualquier miembro puede votar, y todos tienen el mismo poder de voto.
+    +section("Redes")
+      ul
+        li: a(href="https://www.instagram.com/ceoalmagro/") Cuenta de Instagram
+        li: a(href="https://github.com/ceoalmagro/") Organización de GitHub
+    +section("Comisiones")
+      p Lxs estudiantes tienen el derecho de crear Comisiones de Trabajo Estables o Momentáneas a partir de la propuesta y aprobación en Asamblea. Todx miembro del C.E.O. puede participar en cualquier comisión de trabajo independientemente del cargo que ocupe.
+      ul
+        li
+          b Comisión Genero:
+          span  Está constituida por mujeres y disidencias de género que conforman el estudiantado; cualquier hombre puede escuchar y brindar su opinión entendiendo su posición pero no tiene voto ni poder de decisión. Es un espacio de acompañamiento en temas relacionados a violencia de género institucional o entre el alumnado, la propuesta de temas y debates que hacen alusión a este colectivo y la convocatoria de dichas marchas y/o concentraciones.
+        li
+          b Comisión Difusión:
+          span  Se encarga de comunicar y difundir las decisiones, resoluciones y decretos elevados por el C.E.O. a todo el alumnado. Es responsable de la revista, como así también de las páginas oficiales del C.E.O. en las redes sociales y virtuales utilizadas.
+        li: b Comisión Charla-Debate
+        li: b Comisión Festifeo
+        li: b Comisión Varones
+        li: b Comisión Historia
+        li: b Comisión Torneos
+        li: b Comisión Revista
+        li: b Comisión Estatuto
