@@ -14,19 +14,13 @@ body {
 nav {
   display: flex;
   align-items: center;
-  padding: 1rem;
   background: linear-gradient(to right, $gradient-blue);
 
-  gap: 1ch;
-  // Firefox makes this super easy, but all the other browsers dont
-  // so i have to make this dumb @supports query >:(
-  @supports not (gap: 1ch) {
-    & > * {
-      margin-right: 1ch;
-      &:last-child {
-        margin: 0;
-      }
-    }
+  // Firefox makes this super easy with gap, but all the other browsers dont
+  // so i have to do all these dumb css shenanigans >:(
+  padding: 1ch;
+  & > * {
+    margin: 0.5ch;
   }
 
   img {
@@ -47,9 +41,8 @@ main {
 
   h2 {
     font-size: 2rem;
-    font-family: "Zilla Slab Highlight", $font-stack;
+    font-family: "Zilla Slab", $font-stack;
     background: linear-gradient(to right, $gradient-red);
-    background-clip: text;
-    color: transparent;
+    color: white;
   }
 }
