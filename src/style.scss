@@ -1,129 +1,55 @@
-@import url("https://fonts.googleapis.com/css?family=Zilla+Slab|Fira+Sans");
+@import "generic";
+@import url("https://code.cdn.mozilla.net/fonts/zilla-slab.css");
 
-$title-font: "Zilla Slab", "Times New Roman", Times, serif;
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-snap-type: y mandatory;
-}
+$font-stack: Cambria, "Hoefler Text", Utopia, "Liberation Serif",
+  "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+$gradient-red: #ff0039, #ff9400;
+$gradient-blue: #45a1ff, #c069ff;
 
 body {
   margin: 0;
-
-  font-family: "Fira Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: justify;
+  font-family: "Zilla Slab", $font-stack;
 }
 
-header {
-  scroll-snap-align: start;
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(to right, $gradient-blue);
 
+  gap: 1ch;
+  // Firefox makes this super easy, but all the other browsers dont
+  // so i have to make this dumb @supports query >:(
+  @supports not (gap: 1ch) {
+    & > * {
+      margin-right: 1ch;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  img {
+    height: 3rem;
+  }
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+  max-width: $medium;
+}
+
+.title {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-
-  background: url(./assets/logo.svg) center no-repeat,
-    linear-gradient(to top right, #c069ff, #ff0039);
-  background-size: contain;
-
-  text-align: center;
-  font-family: $title-font;
-  font-size: 2vw;
-
-  .down {
-    position: absolute;
-    bottom: 1rem;
-    font-size: 10rem;
-
-    text-decoration: none;
-    color: black;
-
-    @keyframes bounce {
-      to {
-        transform: translateY(-0.1em);
-      }
-    }
-    animation: bounce 1s infinite ease-out alternate;
-  }
-
-  @media (max-aspect-ratio: 1/1) {
-    font-size: 1em;
-  }
-}
-
-section {
-  scroll-snap-align: start;
-  display: flex;
-  min-height: 50vh;
-
-  border-bottom: 8px solid black;
 
   h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-    padding: 1em;
-
-    background: linear-gradient(to bottom right, #ff0039, #ff9400);
-    font-family: $title-font;
-    font-size: 5vw;
-
-    @media (max-aspect-ratio: 1/1) {
-      font-size: 1em;
-    }
+    font-size: 2rem;
+    font-family: "Zilla Slab Highlight", $font-stack;
+    background: linear-gradient(to right, $gradient-red);
+    background-clip: text;
+    color: transparent;
   }
-
-  .content {
-    flex: 1;
-    padding: 1em;
-  }
-
-  &:last-of-type {
-    border-bottom: none;
-  }
-
-  &:nth-of-type(even) h2 {
-    order: 1;
-
-    @media (max-aspect-ratio: 1/1) {
-      order: initial;
-    }
-  }
-
-  @media (max-aspect-ratio: 1/1) {
-    flex-direction: column;
-    border-bottom: none;
-  }
-}
-
-#redes .content {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
-  a {
-    text-align: center;
-
-    img {
-      padding: 1em;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-      filter: drop-shadow(0 0 10px rgba(black, 0.25));
-
-      transition: transform 0.25s;
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
-}
-
-ul {
-  list-style-type: "⇒ ";
 }

@@ -1,0 +1,55 @@
+$medium: 56ch;
+$small: 30ch;
+
+@media (max-width: #{$small - 0.1ch}) {
+  .small {
+    display: inherit;
+  }
+  .medium {
+    display: none;
+  }
+  .large {
+    display: none;
+  }
+}
+
+@media (max-width: $medium) and (min-width: $small) {
+  .small {
+    display: none;
+  }
+  .medium {
+    display: inherit;
+  }
+  .large {
+    display: none;
+  }
+}
+
+@media (min-width: #{$medium + 0.1ch}) {
+  .small {
+    display: none;
+  }
+  .medium {
+    display: none;
+  }
+  .large {
+    display: inherit;
+  }
+}
+
+.grow {
+  flex: 1 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+}
