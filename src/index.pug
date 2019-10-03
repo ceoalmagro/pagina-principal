@@ -1,5 +1,3 @@
-- const whatsapp = "https://forms.gle/sMzyYCNEoPdpJ1if8"
-
 mixin link(href)
   a(href=href, target="_blank"): block
 
@@ -25,13 +23,14 @@ html(lang="en")
     title CEO Almagro
   body
     nav
-      img(src="assets/logo.svg")
-      h2.medium CEO
-      h2.large Centro de Estudiantes ORT
+      img.fit-height(src="assets/logo.svg")
+      h2 Centro de Estudiantes ORT
       .grow
-      +link(whatsapp): img(src="assets/whatsapp.svg", alt="WhatsApp")
-      +link("https://www.instagram.com/ceoalmagro/"): img(src="assets/instagram.svg", alt="Instagram")
-      +link("https://github.com/ceoalmagro/"): img(src="assets/github.svg", alt="Github")
+      .socials-button Redes
+      .socials
+        +link("https://forms.gle/sMzyYCNEoPdpJ1if8"): img.fit-width(src="assets/whatsapp.svg", alt="WhatsApp")
+        +link("https://www.instagram.com/ceoalmagro/"): img.fit-width(src="assets/instagram.svg", alt="Instagram")
+        +link("https://github.com/ceoalmagro/"): img.fit-width(src="assets/github.svg", alt="Github")
     main
       +title("Quienes Somos?")
       p El centro de estudiantes es una organización horizontal cuyo objetivo es hacer oír la voz del estudiantado. Esta formado por todxs lxs alumnxs del ciclo básico y de las orientaciones.

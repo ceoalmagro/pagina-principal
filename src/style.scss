@@ -1,6 +1,7 @@
 @import "generic";
 @import url("https://code.cdn.mozilla.net/fonts/zilla-slab.css");
 
+$nav-size: 4rem;
 $font-stack: Cambria, "Hoefler Text", Utopia, "Liberation Serif",
   "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 $gradient-red: #ff0039, #ff9400;
@@ -16,22 +17,65 @@ nav {
   align-items: center;
   background: linear-gradient(to right, $gradient-blue);
 
-  // Firefox makes this super easy with gap, but all the other browsers dont
-  // so i have to do all these dumb css shenanigans >:(
-  padding: 1ch;
-  & > * {
-    margin: 0.5ch;
+  height: $nav-size;
+
+  & > img {
+    padding: 0.5rem;
+  }
+}
+
+.socials-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: $nav-size;
+  height: $nav-size;
+
+  font-weight: bold;
+
+  transition: background 0.25s $easing;
+  background: rgba(black, 0.1);
+  &:hover {
+    background: rgba(black, 0.2);
   }
 
-  img {
-    height: 3rem;
+  & + .socials {
+    transition: clip-path 0.25s $easing;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  &:hover + .socials {
+    clip-path: inset(0);
+  }
+}
+
+.socials {
+  position: absolute;
+
+  right: 0;
+  top: $nav-size;
+
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, $gradient-red);
+
+  width: $nav-size;
+
+  &:hover {
+    clip-path: inset(0);
+  }
+
+  a {
+    padding: 0.5rem;
+    @include hoverable();
   }
 }
 
 main {
   padding: 1rem;
   margin: auto;
-  max-width: $medium;
 }
 
 .title {
@@ -41,7 +85,6 @@ main {
 
   h2 {
     font-size: 2rem;
-    font-family: "Zilla Slab", $font-stack;
     background: linear-gradient(to right, $gradient-red);
     color: white;
   }

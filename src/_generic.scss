@@ -1,40 +1,7 @@
-$medium: 56ch;
-$small: 30ch;
+$easing: cubic-bezier(0.07, 0.95, 0, 1);
 
-@media (max-width: #{$small - 0.1ch}) {
-  .small {
-    display: inherit;
-  }
-  .medium {
-    display: none;
-  }
-  .large {
-    display: none;
-  }
-}
-
-@media (max-width: $medium) and (min-width: $small) {
-  .small {
-    display: none;
-  }
-  .medium {
-    display: inherit;
-  }
-  .large {
-    display: none;
-  }
-}
-
-@media (min-width: #{$medium + 0.1ch}) {
-  .small {
-    display: none;
-  }
-  .medium {
-    display: none;
-  }
-  .large {
-    display: inherit;
-  }
+* {
+  box-sizing: border-box;
 }
 
 .grow {
@@ -52,4 +19,19 @@ h6 {
 
 p {
   text-align: justify;
+}
+
+.fit-width {
+  width: 100%;
+}
+
+.fit-height {
+  height: 100%;
+}
+
+@mixin hoverable {
+  transition: background 0.25s $easing;
+  &:hover {
+    background: rgba(black, 0.1);
+  }
 }
