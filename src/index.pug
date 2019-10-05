@@ -1,8 +1,10 @@
 mixin link(href)
   a(href=href, target="_blank"): block
 
-mixin title(text)
-  .title: h2: =text
+mixin section(title)
+  section
+    .title: h2: =title
+    block
 
 <!DOCTYPE html>
 html(lang="en")
@@ -32,8 +34,8 @@ html(lang="en")
         +link("https://www.instagram.com/ceoalmagro/"): img.fit-width(src="assets/instagram.svg", alt="Instagram")
         +link("https://github.com/ceoalmagro/"): img.fit-width(src="assets/github.svg", alt="Github")
     main
-      +title("Quienes Somos?")
-      p El centro de estudiantes es una organización horizontal cuyo objetivo es hacer oír la voz del estudiantado. Esta formado por todxs lxs alumnxs del ciclo básico y de las orientaciones.
-      p Funcionamos como una democracia directa: Cualquier decisión del centro se hace mediante una votación en asamblea, en la cual cualquier miembro puede votar, y todos tienen el mismo poder de voto.
-      +title("Asambleas")
-      p El principal espacio del centro para compartir, debatir, votar, y llevar a cabo ideas es la asamblea. Todos los lunes al mediodia (en la hora del almuerzo) hay una asamblea en el aula 2201, y cualquier miembro del alumnado puede asistir para poder ayudar a llevar el centro adelante.
+      +section("Quienes Somos?")
+        p El centro de estudiantes es una organización horizontal cuyo objetivo es hacer oír la voz del estudiantado. Esta formado por todxs lxs alumnxs del ciclo básico y de las orientaciones.
+        p Funcionamos como una democracia directa: Cualquier decisión del centro se hace mediante una votación en asamblea, en la cual cualquier miembro puede votar, y todos tienen el mismo poder de voto.
+      +section("Asambleas")
+        p El principal espacio del centro para compartir, debatir, votar, y llevar a cabo ideas es la asamblea. Todos los lunes al mediodia (en la hora del almuerzo) hay una asamblea en el aula 2201, y cualquier miembro del alumnado puede asistir para poder ayudar a llevar el centro adelante.
