@@ -87,6 +87,8 @@ main {
   justify-content: center;
 
   h2 {
+    border-radius: 4px;
+    padding: 0 0.4ch;
     font-size: 2rem;
     background: linear-gradient(to right, $gradient-red);
     color: white;
