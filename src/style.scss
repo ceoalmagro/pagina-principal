@@ -104,6 +104,10 @@ main {
   border-radius: 4px;
   padding: 0.5rem;
 
+  .name {
+    text-align: right;
+  }
+
   &.ceo {
     background: linear-gradient(to bottom right, $gradient-red);
   }
