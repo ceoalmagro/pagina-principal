@@ -1,7 +1,7 @@
 - const options = { weekday: "short", month: "long", day: "numeric" };
 
 mixin link(href)
-  a(href=href, target="_blank"): block
+  a(href=href, target="_blank", rel="noopener noreferrer"): block
 
 mixin section(title)
   section
