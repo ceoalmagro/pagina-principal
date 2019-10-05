@@ -6,6 +6,7 @@ $font-stack: Cambria, "Hoefler Text", Utopia, "Liberation Serif",
   "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 $gradient-red: #ff0039, #ff9400;
 $gradient-blue: #45a1ff, #c069ff;
+$gradient-green: #30e60b, #ffe900;
 
 body {
   margin: 0;
@@ -89,5 +90,29 @@ main {
     font-size: 2rem;
     background: linear-gradient(to right, $gradient-red);
     color: white;
+  }
+}
+
+.events {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.event {
+  display: flex;
+  border-radius: 4px;
+  padding: 0.5rem;
+
+  &.ceo {
+    background: linear-gradient(to bottom right, $gradient-red);
+  }
+
+  &.extra {
+    background: linear-gradient(to bottom right, $gradient-blue);
+  }
+
+  &.feriado {
+    background: linear-gradient(to bottom right, $gradient-green);
   }
 }

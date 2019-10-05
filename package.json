@@ -5,11 +5,13 @@
   "author": "Sr Komodo <komodosr@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "parcel src/index.pug",
-    "build": "parcel build src/index.pug"
+    "start": "NODE_ICU_DATA=\"$(pwd)/node_modules/full-icu\" parcel src/index.pug",
+    "build": "NODE_ICU_DATA=\"$(pwd)/node_modules/full-icu\" parcel build src/index.pug"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
+    "full-icu": "^1.3.0",
+    "luxon": "^1.19.3",
     "parcel-bundler": "^1.12.3",
     "pug": "^2.0.4",
     "sass": "^1.22.7"
