@@ -4,16 +4,20 @@
   "repository": "git@github.com:ceoalmagro/pagina-principal.git",
   "author": "Sr Komodo <komodosr@gmail.com>",
   "license": "GPL-3.0",
+  "browserslist": [
+    ">5%"
+  ],
   "scripts": {
-    "start": "NODE_ICU_DATA=\"$(pwd)/node_modules/full-icu\" parcel src/index.pug",
-    "build": "NODE_ICU_DATA=\"$(pwd)/node_modules/full-icu\" parcel build src/index.pug"
+    "start": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
-    "full-icu": "^1.3.0",
-    "luxon": "^1.19.3",
     "parcel-bundler": "^1.12.3",
     "pug": "^2.0.4",
     "sass": "^1.22.7"
+  },
+  "dependencies": {
+    "luxon": "^1.19.3"
   }
 }

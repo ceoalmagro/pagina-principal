@@ -42,13 +42,5 @@ html(lang="en")
       +section("Asambleas")
         p El principal espacio del centro para compartir, debatir, votar, y llevar a cabo ideas es la asamblea. Todos los lunes al mediodia (en la hora del almuerzo) hay una asamblea en el aula 2201, y cualquier miembro del alumnado puede asistir para poder ayudar a llevar el centro adelante.
       +section("Próximos Eventos")
-        - const calendar = JSON.parse(readFileSync("./src/calendar.json", "utf-8"));
-        .events
-          - const now = DateTime.local();
-          - for (event of calendar)
-            - const date = DateTime.fromISO(event.date);
-            - if (date < now) continue;
-            .event(class=event.type)
-              time(datetime=date.toISO())= date.setLocale("es-AR").toFormat("EEE d 'de' MMM 'a las' t")
-              .grow
-              .name= event.name
+        #events
+    script(src="script.js")

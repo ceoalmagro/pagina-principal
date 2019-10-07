@@ -95,7 +95,7 @@ main {
   }
 }
 
-.events {
+#events {
   display: grid;
   gap: 1rem;
   padding-top: 1rem;
@@ -106,7 +106,7 @@ main {
   border-radius: 4px;
   padding: 0.5rem;
 
-  .name {
+  .title {
     text-align: right;
   }
 
@@ -118,7 +118,7 @@ main {
     background: linear-gradient(to bottom right, $gradient-blue);
   }
 
-  &.feriado {
+  &.ort {
     background: linear-gradient(to bottom right, $gradient-green);
   }
 }
