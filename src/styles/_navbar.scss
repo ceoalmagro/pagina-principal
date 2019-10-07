@@ -12,7 +12,7 @@ nav {
   }
 }
 
-.socials-button {
+#socials-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,18 +28,9 @@ nav {
   &:hover {
     background: rgba(black, 0.2);
   }
-
-  & + .socials {
-    transition: clip-path 0.25s $easing;
-    clip-path: inset(0 0 100% 0);
-  }
-
-  &:hover + .socials {
-    clip-path: inset(0);
-  }
 }
 
-.socials {
+#socials {
   position: absolute;
 
   right: 0;
@@ -51,12 +42,14 @@ nav {
 
   width: $nav-height;
 
-  &:hover {
-    clip-path: inset(0);
-  }
-
   a {
     padding: 0.5rem;
     @include hoverable();
+  }
+
+  transition: clip-path 0.25s $easing;
+  clip-path: inset(0 0 100% 0);
+  &.open {
+    clip-path: inset(0);
   }
 }
