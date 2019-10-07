@@ -19,6 +19,7 @@ fetch(url).then(async r => {
   const sorted = events.sort((a, b) => a[1] - b[1]);
 
   // Create and append elements for each event
+  container.firstChild.remove();
   for (const event of sorted) {
     const element = document.createElement("div");
     element.classList.add("event", event[0]);

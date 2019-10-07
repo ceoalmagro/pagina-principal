@@ -53,3 +53,30 @@ nav {
     clip-path: inset(0);
   }
 }
+
+@keyframes loading {
+  from {
+    transform: translateX(-200%);
+  }
+
+  to {
+    transform: translateX(200%) rotate(1turn);
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  color: gray;
+  font-size: small;
+
+  div {
+    width: 1rem;
+    height: 1rem;
+    background: linear-gradient(to bottom right, $gradient-red);
+    animation: loading 1s infinite alternate cubic-bezier(0.8, 0, 0.2, 1);
+  }
+}
