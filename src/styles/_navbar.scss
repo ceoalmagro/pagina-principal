@@ -1,0 +1,62 @@
+$nav-height: 4rem;
+
+nav {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, $gradient-blue);
+
+  height: $nav-height;
+
+  & > img {
+    padding: 0.5rem;
+  }
+}
+
+.socials-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: $nav-height;
+  height: $nav-height;
+
+  font-weight: bold;
+
+  transition: background 0.25s $easing;
+  background: rgba(black, 0.1);
+  &:hover {
+    background: rgba(black, 0.2);
+  }
+
+  & + .socials {
+    transition: clip-path 0.25s $easing;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  &:hover + .socials {
+    clip-path: inset(0);
+  }
+}
+
+.socials {
+  position: absolute;
+
+  right: 0;
+  top: $nav-height;
+
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, $gradient-red);
+
+  width: $nav-height;
+
+  &:hover {
+    clip-path: inset(0);
+  }
+
+  a {
+    padding: 0.5rem;
+    @include hoverable();
+  }
+}

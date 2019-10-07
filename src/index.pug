@@ -1,5 +1,3 @@
-- const options = { weekday: "short", month: "long", day: "numeric" };
-
 mixin link(href)
   a(href=href, target="_blank", rel="noopener noreferrer"): block
 
@@ -19,9 +17,9 @@ html(lang="en")
     meta(property="og:description", content="Pagina oficial del Centro de Estudiantes de ORT Almagro")
     meta(property="og:url", content="https://ceoalmagro.github.io/")
 
-    link(rel="icon", href="assets/logo_16.png", sizes="16x16")
-    link(rel="icon", href="assets/logo_32.png", sizes="32x32")
-    link(rel="icon", href="assets/logo_48.png", sizes="48x48")
+    link(rel="icon", href="assets/favicon/favicon_16.png", sizes="16x16")
+    link(rel="icon", href="assets/favicon/favicon_32.png", sizes="32x32")
+    link(rel="icon", href="assets/favicon/favicon_48.png", sizes="48x48")
     link(rel="stylesheet", href="style.scss")
 
     title CEO Almagro
@@ -32,9 +30,9 @@ html(lang="en")
       .grow
       .socials-button Redes
       .socials
-        +link("https://forms.gle/sMzyYCNEoPdpJ1if8"): img.fit-width(src="assets/whatsapp.svg", alt="WhatsApp")
-        +link("https://www.instagram.com/ceoalmagro/"): img.fit-width(src="assets/instagram.svg", alt="Instagram")
-        +link("https://github.com/ceoalmagro/"): img.fit-width(src="assets/github.svg", alt="Github")
+        +link("https://forms.gle/sMzyYCNEoPdpJ1if8"): img.fit-width(src="assets/socials/whatsapp.svg", alt="WhatsApp")
+        +link("https://www.instagram.com/ceoalmagro/"): img.fit-width(src="assets/socials/instagram.svg", alt="Instagram")
+        +link("https://github.com/ceoalmagro/"): img.fit-width(src="assets/socials/github.svg", alt="Github")
     main
       +section("Quienes Somos?")
         p El centro de estudiantes es una organización horizontal cuyo objetivo es hacer oír la voz del estudiantado. Esta formado por todxs lxs alumnxs del ciclo básico y de las orientaciones.

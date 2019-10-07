@@ -1,11 +1,5 @@
-$easing: cubic-bezier(0.07, 0.95, 0, 1);
-
 * {
   box-sizing: border-box;
-}
-
-.grow {
-  flex: 1 1;
 }
 
 h1,
@@ -19,6 +13,10 @@ h6 {
 
 p {
   text-align: justify;
+}
+
+.grow {
+  flex: 1 1;
 }
 
 .fit-width {

@@ -1,0 +1,29 @@
+@import url("https://code.cdn.mozilla.net/fonts/zilla-slab.css");
+
+body {
+  margin: 0;
+  font-family: "Zilla Slab", Cambria, "Hoefler Text", Utopia, "Liberation Serif",
+    "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  h2 {
+    border-radius: 4px;
+    padding: 0 0.4ch;
+    font-size: 2rem;
+    background: linear-gradient(to right, $gradient-red);
+    color: white;
+  }
+}

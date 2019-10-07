@@ -1,0 +1,22 @@
+.event {
+  display: flex;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  .name {
+    text-align: right;
+  }
+
+  &.ceo {
+    background: linear-gradient(to bottom right, $gradient-red);
+  }
+
+  &.extra {
+    background: linear-gradient(to bottom right, $gradient-green);
+  }
+
+  &.ort {
+    background: linear-gradient(to bottom right, $gradient-blue);
+  }
+}
