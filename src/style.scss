@@ -85,6 +85,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 
   h2 {
     border-radius: 4px;
@@ -95,18 +96,13 @@ main {
   }
 }
 
-#events {
-  display: grid;
-  gap: 1rem;
-  padding-top: 1rem;
-}
-
 .event {
   display: flex;
-  border-radius: 4px;
+  margin: 1rem 0;
   padding: 0.5rem;
+  border-radius: 4px;
 
-  .title {
+  .name {
     text-align: right;
   }
 
@@ -115,10 +111,10 @@ main {
   }
 
   &.extra {
-    background: linear-gradient(to bottom right, $gradient-blue);
+    background: linear-gradient(to bottom right, $gradient-green);
   }
 
   &.ort {
-    background: linear-gradient(to bottom right, $gradient-green);
+    background: linear-gradient(to bottom right, $gradient-blue);
   }
 }

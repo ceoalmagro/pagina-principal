@@ -34,10 +34,10 @@ fetch(url).then(async r => {
     grow.className = "grow";
     element.appendChild(grow);
 
-    const title = document.createElement("div");
-    title.className = "title";
-    title.textContent = event[2];
-    element.appendChild(title);
+    const name = document.createElement("div");
+    name.className = "name";
+    name.textContent = event[2];
+    element.appendChild(name);
 
     container.appendChild(element);
   }
