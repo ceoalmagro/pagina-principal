@@ -1,129 +1,124 @@
-@import url("https://fonts.googleapis.com/css?family=Zilla+Slab|Fira+Sans");
+@import "generic";
+@import url("https://code.cdn.mozilla.net/fonts/zilla-slab.css");
 
-$title-font: "Zilla Slab", "Times New Roman", Times, serif;
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-snap-type: y mandatory;
-}
+$nav-size: 4rem;
+$font-stack: Cambria, "Hoefler Text", Utopia, "Liberation Serif",
+  "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+$gradient-red: #ff0039, #ff9400;
+$gradient-blue: #45a1ff, #c069ff;
+$gradient-green: #30e60b, #ffe900;
 
 body {
   margin: 0;
-
-  font-family: "Fira Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: justify;
+  font-family: "Zilla Slab", $font-stack;
 }
 
-header {
-  scroll-snap-align: start;
+nav {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, $gradient-blue);
 
+  height: $nav-size;
+
+  & > img {
+    padding: 0.5rem;
+  }
+}
+
+.socials-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  flex-shrink: 0;
 
-  background: url(./assets/logo.svg) center no-repeat,
-    linear-gradient(to top right, #c069ff, #ff0039);
-  background-size: contain;
+  width: $nav-size;
+  height: $nav-size;
 
-  text-align: center;
-  font-family: $title-font;
-  font-size: 2vw;
+  font-weight: bold;
 
-  .down {
-    position: absolute;
-    bottom: 1rem;
-    font-size: 10rem;
-
-    text-decoration: none;
-    color: black;
-
-    @keyframes bounce {
-      to {
-        transform: translateY(-0.1em);
-      }
-    }
-    animation: bounce 1s infinite ease-out alternate;
+  transition: background 0.25s $easing;
+  background: rgba(black, 0.1);
+  &:hover {
+    background: rgba(black, 0.2);
   }
 
-  @media (max-aspect-ratio: 1/1) {
-    font-size: 1em;
+  & + .socials {
+    transition: clip-path 0.25s $easing;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  &:hover + .socials {
+    clip-path: inset(0);
   }
 }
 
-section {
-  scroll-snap-align: start;
+.socials {
+  position: absolute;
+
+  right: 0;
+  top: $nav-size;
+
   display: flex;
-  min-height: 50vh;
+  flex-direction: column;
+  background: linear-gradient(to bottom, $gradient-red);
 
-  border-bottom: 8px solid black;
+  width: $nav-size;
 
-  h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-    padding: 1em;
-
-    background: linear-gradient(to bottom right, #ff0039, #ff9400);
-    font-family: $title-font;
-    font-size: 5vw;
-
-    @media (max-aspect-ratio: 1/1) {
-      font-size: 1em;
-    }
+  &:hover {
+    clip-path: inset(0);
   }
-
-  .content {
-    flex: 1;
-    padding: 1em;
-  }
-
-  &:last-of-type {
-    border-bottom: none;
-  }
-
-  &:nth-of-type(even) h2 {
-    order: 1;
-
-    @media (max-aspect-ratio: 1/1) {
-      order: initial;
-    }
-  }
-
-  @media (max-aspect-ratio: 1/1) {
-    flex-direction: column;
-    border-bottom: none;
-  }
-}
-
-#redes .content {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 
   a {
-    text-align: center;
-
-    img {
-      padding: 1em;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-      filter: drop-shadow(0 0 10px rgba(black, 0.25));
-
-      transition: transform 0.25s;
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
+    padding: 0.5rem;
+    @include hoverable();
   }
 }
 
-ul {
-  list-style-type: "⇒ ";
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    border-radius: 4px;
+    padding: 0 0.4ch;
+    font-size: 2rem;
+    background: linear-gradient(to right, $gradient-red);
+    color: white;
+  }
+}
+
+.events {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.event {
+  display: flex;
+  border-radius: 4px;
+  padding: 0.5rem;
+
+  .name {
+    text-align: right;
+  }
+
+  &.ceo {
+    background: linear-gradient(to bottom right, $gradient-red);
+  }
+
+  &.extra {
+    background: linear-gradient(to bottom right, $gradient-blue);
+  }
+
+  &.feriado {
+    background: linear-gradient(to bottom right, $gradient-green);
+  }
 }

@@ -1,0 +1,37 @@
+$easing: cubic-bezier(0.07, 0.95, 0, 1);
+
+* {
+  box-sizing: border-box;
+}
+
+.grow {
+  flex: 1 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+}
+
+.fit-width {
+  width: 100%;
+}
+
+.fit-height {
+  height: 100%;
+}
+
+@mixin hoverable {
+  transition: background 0.25s $easing;
+  &:hover {
+    background: rgba(black, 0.1);
+  }
+}
